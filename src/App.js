@@ -9,6 +9,7 @@ class App extends Component {
 
     this.state = {
       monsters : [],
+      allMonsters : []
     };
   }
 
@@ -21,6 +22,7 @@ class App extends Component {
       },
       () => {
         console.log(this.state);
+        this.state.allMonsters = this.state.monsters;
       }
     )
     )
@@ -33,7 +35,7 @@ class App extends Component {
           onChange={(event) => {
             console.log(event.target.value);
             const searchString = event.target.value.toLowerCase();
-            const filteredMonsters = this.state.monsters.filter((monster) => {
+            const filteredMonsters = this.state.allMonsters.filter((monster) => {
               return monster.name.toLowerCase().includes(searchString);
             });
             this.setState(() => {
