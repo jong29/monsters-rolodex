@@ -19,9 +19,6 @@ class App extends Component {
     .then((users) => this.setState(
       () => {
         return {monsters: users};
-      },
-      () => {
-        console.log(this.state);
       }
     )
     )
@@ -53,7 +50,7 @@ class App extends Component {
             </div> 
           );
         })} */}
-        <CardList />
+        <CardList monsters = {filteredMonsters} />
       </div>
     );
   }
