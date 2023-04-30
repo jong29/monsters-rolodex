@@ -4,7 +4,6 @@ import './card.styles.css';
 class Card extends Component {
 		render () {
       const {id, name, email} = this.props.monster;
-      console.log(id, name, email);
 
 			return (
         <div key={id} className="card">
